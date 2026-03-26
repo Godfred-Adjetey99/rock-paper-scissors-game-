@@ -4,10 +4,11 @@ const scores = {
   ties: 0,
 };
 
-const restSetGame = () => {
+const resetGame = () => {
   scores.wins = 0;
   scores.losses = 0;
   scores.ties = 0;
+
   alert(
     `Game Reset! Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`,
   );
