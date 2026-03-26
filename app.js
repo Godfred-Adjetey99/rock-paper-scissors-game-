@@ -1,16 +1,12 @@
-const scores = {
-  wins: 0,
-  losses: 0,
-  ties: 0,
-};
+const score = JSON.parse(localStorage.getItem("scores"));
 
 const resetGame = () => {
-  scores.wins = 0;
-  scores.losses = 0;
-  scores.ties = 0;
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
 
   alert(
-    `Game Reset! Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`,
+    `Game Reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`,
   );
 };
 
@@ -46,15 +42,17 @@ const playGame = (playerMove) => {
   }
 
   if (result === "You Win") {
-    scores.wins++;
+    score.wins++;
   } else if (result === "You Lose") {
-    scores.losses++;
+    score.losses++;
   } else if (result === "You Tie") {
-    scores.ties++;
+    score.ties++;
   }
 
+  localStorage.setItem("scores", JSON.stringify(score));
+
   alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}
-Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`);
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 };
 
 const computerChoice = () => {
