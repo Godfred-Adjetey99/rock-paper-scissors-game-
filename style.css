@@ -41,3 +41,21 @@ button {
 button:hover {
     transform: scale(1.1);
 }
+
+
+.reset {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    display: block;
+    border: red solid 2px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.reset:hover {
+    transform: scale(1.05);
+    background: rgb(204, 86, 86);
+    color: #ffffff;
+}

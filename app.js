@@ -1,3 +1,18 @@
+const scores = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
+const restSetGame = () => {
+  scores.wins = 0;
+  scores.losses = 0;
+  scores.ties = 0;
+  alert(
+    `Game Reset! Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`,
+  );
+};
+
 const playGame = (playerMove) => {
   const computerMove = computerChoice();
 
@@ -29,7 +44,16 @@ const playGame = (playerMove) => {
     }
   }
 
-  alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}`);
+  if (result === "You Win") {
+    scores.wins++;
+  } else if (result === "You Lose") {
+    scores.losses++;
+  } else if (result === "You Tie") {
+    scores.ties++;
+  }
+
+  alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}
+Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`);
 };
 
 const computerChoice = () => {
