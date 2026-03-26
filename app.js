@@ -1,9 +1,15 @@
-const score = JSON.parse(localStorage.getItem("scores"));
+const score = JSON.parse(localStorage.getItem("scores")) || {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
 const resetGame = () => {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
+
+  localStorage.removeItem("scores");
 
   alert(
     `Game Reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`,
