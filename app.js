@@ -4,8 +4,11 @@ const score = JSON.parse(localStorage.getItem("scores")) || {
   ties: 0,
 };
 
-const scoreBoard = (document.querySelector("#scores").innerHTML =
-  `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+const scoreBoard = document.querySelector("#scores");
+
+const updateScore = () => {
+  scoreBoard.innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+};
 
 const resetGame = () => {
   score.wins = 0;
@@ -14,9 +17,7 @@ const resetGame = () => {
 
   localStorage.removeItem("scores");
 
-  alert(
-    `Game Reset! Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`,
-  );
+  updateScore();
 };
 
 const playGame = (playerMove) => {
@@ -60,8 +61,7 @@ const playGame = (playerMove) => {
 
   localStorage.setItem("scores", JSON.stringify(score));
 
-  const scoreBoard = (document.querySelector("#scores").innerHTML =
-    `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+  updateScore();
 
   //   alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}
   // Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
