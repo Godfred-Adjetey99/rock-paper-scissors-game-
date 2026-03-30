@@ -78,3 +78,9 @@ p {
     text-align: center;
     margin: 30px 0;
 }
+
+
+.moves {
+    text-align: center;
+    font-weight: bold;
+}
