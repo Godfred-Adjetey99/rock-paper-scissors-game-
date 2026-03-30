@@ -63,7 +63,7 @@ const playGame = (playerMove) => {
 
   localStorage.setItem("scores", JSON.stringify(score));
 
-  moveBoard.innerHTML = `You chose ${playerMove} and computer Chose ${computerMove} `;
+  moveBoard.innerHTML = `You ${playerMove}  Computer ${computerMove} `;
   resultBoard.innerHTML = result;
 
   updateScore();
