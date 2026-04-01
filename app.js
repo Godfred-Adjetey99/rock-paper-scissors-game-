@@ -63,7 +63,7 @@ const playGame = (playerMove) => {
 
   localStorage.setItem("scores", JSON.stringify(score));
 
-  moveBoard.innerHTML = `You ${playerMove}  Computer ${computerMove} `;
+  moveBoard.innerHTML = `You <img src="Image/${playerMove}.png" alt="${playerMove}">  Computer <img src="Image/${computerMove}.png" alt="${computerMove}"> `;
   resultBoard.innerHTML = result;
 
   updateScore();
