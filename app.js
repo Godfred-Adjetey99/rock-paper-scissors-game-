@@ -31,11 +31,13 @@ const autoPlay = () => {
       const playerMove = computerChoice();
       playGame(playerMove);
       document.querySelector(".autoPlay").innerHTML = "Stop Play";
-    }, 2000);
+      document.querySelector(".autoPlay").style.backgroundColor = "red";
+    }, 1000);
   } else {
     autoPlayEnabled = false;
     clearInterval(clearIntervalId);
     document.querySelector(".autoPlay").innerHTML = "Auto Play";
+    document.querySelector(".autoPlay").style.backgroundColor = "gray";
   }
 };
 
