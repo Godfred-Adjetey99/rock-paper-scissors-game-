@@ -21,6 +21,23 @@ const resetGame = () => {
 
   updateScore();
 };
+let autoPlayEnabled = false;
+let clearIntervalId;
+
+const autoPlay = () => {
+  if (!autoPlayEnabled) {
+    autoPlayEnabled = true;
+    clearIntervalId = setInterval(() => {
+      const playerMove = computerChoice();
+      playGame(playerMove);
+      document.querySelector(".autoPlay").innerHTML = "Stop Play";
+    }, 2000);
+  } else {
+    autoPlayEnabled = false;
+    clearInterval(clearIntervalId);
+    document.querySelector(".autoPlay").innerHTML = "Auto Play";
+  }
+};
 
 const playGame = (playerMove) => {
   const computerMove = computerChoice();

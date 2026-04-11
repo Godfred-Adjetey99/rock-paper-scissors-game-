@@ -8,7 +8,7 @@
 body {
     height: 100vh;
     background-color: #000000;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 img {
@@ -52,7 +52,7 @@ p {
 }
 
 
-.reset {
+.reset, .autoPlay {
     font-weight: bold;
     font-size: 1rem;
     padding: 1rem 1rem;
@@ -64,10 +64,14 @@ p {
     color: #000000;
 }
 
-.reset:hover {
+.reset:hover  {
     transform: scale(1.05);
     background: rgb(204, 86, 86);
     color: #ffffff;
+}
+
+.autoPlay {
+    background-color: gray;
 }
 
 #result {
@@ -88,4 +92,8 @@ p {
 #moves {
     text-align: center;
     font-weight: bold;
+}
+
+@media screen {
+    
 }
