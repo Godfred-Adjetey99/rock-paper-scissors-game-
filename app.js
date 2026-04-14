@@ -8,6 +8,16 @@ const scoreBoard = document.querySelector("#scores");
 const resultBoard = document.querySelector("#result");
 const moveBoard = document.querySelector("#moves");
 
+const rockBtn = document
+  .querySelector(".rockBtn")
+  .addEventListener("click", () => playGame("rock"));
+const paperBtn = document
+  .querySelector(".paperBtn")
+  .addEventListener("click", () => playGame("paper"));
+const scissorsBtn = document
+  .querySelector(".scissorsBtn")
+  .addEventListener("click", () => playGame("scissors"));
+
 const updateScore = () => {
   scoreBoard.innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 };
