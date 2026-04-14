@@ -18,6 +18,16 @@ const scissorsBtn = document
   .querySelector(".scissorsBtn")
   .addEventListener("click", () => playGame("scissors"));
 
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    playGame("rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissors");
+  }
+});
+
 const updateScore = () => {
   scoreBoard.innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 };
